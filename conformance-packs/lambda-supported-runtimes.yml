@@ -1,9 +1,9 @@
 Parameters:
   RunTimeList:
     Type: String
-    Description: List of runtime environments supported
-    Default: "python3.8, python3.7, python3.6"
-
+    Description: List of lambda runtime environments supported
+    Default: "python3.8, python3.7, python3.6, nodejs14.x, nodejs12.x,  ruby2.7, java11, java8.al2, java8, go1.x, dotnetcore3.1, dotnetcore2.1, provided.al2, provided "
+    ## Scheduuled for deprecation: nodejs10.x (June 30, 2021), ruby2.5 (June 30, 2021), python2.7 (Sept 30, 2021)
 Resources:
 
   #################################################
@@ -12,8 +12,8 @@ Resources:
   LambdaPythonRuntimeCheck:
     Type: AWS::Config::ConfigRule
     Properties:
-      ConfigRuleName: Lambda-Deprecated-Runtime
-      Description: Checks that the AWS Lambda function settings for runtime, role, timeout, and memory size match the expected values.
+      ConfigRuleName: Lambda-Supported-Runtime
+      Description: Lambda function configuration check for supported runtimes. Reference https://docs.aws.amazon.com/lambda/latest/dg/runtime-support-policy.html.
       Source:
         Owner: AWS
         SourceIdentifier: LAMBDA_FUNCTION_SETTINGS_CHECK
