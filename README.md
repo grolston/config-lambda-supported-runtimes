@@ -1,6 +1,27 @@
-# Config Rule Python Runtime
+# Config Rule Lambda Supported Runtimes
 
-Checks for unsupported versions of Python 2.7.
+Checks for unsupported runtime environments for Lambda.
+
+## Suppurted Runtimes
+
+The following runtime environments are supported in AWS Lambda
+
+1. python3.8 
+2. python3.7 
+3. python3.6 
+4. nodejs14.x 
+5. nodejs12.x  
+6. ruby2.7 
+7. java11
+8. java8.al2 
+9. java8 
+10. go1.x
+11. dotnetcore3.1
+12. dotnetcore2.1 
+13. provided.al2
+14. provided
+
+If the runtime identifier is not listed above, the config rule will display as noncompliant.
 
 ## Deployment
 
