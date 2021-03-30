@@ -1,0 +1,24 @@
+Parameters:
+  RunTimeList:
+    Type: String
+    Description: List of runtime environments supported
+    Default: "python3.8, python3.7, python3.6"
+
+Resources:
+
+  #################################################
+  ## Conformance Pack
+  #################################################
+  LambdaPythonRuntimeCheck:
+    Type: AWS::Config::ConfigRule
+    Properties:
+      ConfigRuleName: Lambda-Deprecated-Runtime
+      Description: Checks that the AWS Lambda function settings for runtime, role, timeout, and memory size match the expected values.
+      Source:
+        Owner: AWS
+        SourceIdentifier: LAMBDA_FUNCTION_SETTINGS_CHECK
+      Scope:
+        ComplianceResourceTypes:
+          - AWS::Lambda::Function
+      InputParameters:
+        runtime: !Ref RunTimeList
