@@ -2,7 +2,7 @@
 
 Checks for unsupported runtime environments for Lambda.
 
-## Suppurted Runtimes
+## Supported Runtimes
 
 The following runtime environments are supported in AWS Lambda
 
