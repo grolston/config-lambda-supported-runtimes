@@ -1,4 +1,4 @@
-# Config Rule Lambda Supported Runtimes
+# Config Rule - Conformance Pack - Lambda Supported Runtimes
 
 Checks for unsupported runtime environments for Lambda.
 
